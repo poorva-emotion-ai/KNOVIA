@@ -3,9 +3,12 @@ import streamlit as st
 from database import create_database
 from update_database import update_database
 
-# Initialise database before loading pages
-create_database()
-update_database()
+@st.cache_resource
+def initialize_database():
+    create_database()
+    update_database()
+
+initialize_database()
 
 st.set_page_config(
     page_title="KNOVIA",
