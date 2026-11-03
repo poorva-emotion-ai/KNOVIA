@@ -1,6 +1,7 @@
 import os
 import time
 from pathlib import Path
+import streamlit as st
 
 from document_processor import process_document
 from text_chunker import chunk_text
@@ -19,7 +20,11 @@ ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
 
 load_dotenv(dotenv_path=ENV_PATH)
 
-api_key = os.getenv("GEMINI_API_KEY")
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except (KeyError, FileNotFoundError):
+    api_key = os.getenv("GEMINI_API_KEY")
+
 
 if not api_key:
     raise ValueError(
