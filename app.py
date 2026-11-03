@@ -1,5 +1,11 @@
 
 import streamlit as st
+from database import create_database
+from update_database import update_database
+
+# Initialise database before loading pages
+create_database()
+update_database()
 
 st.set_page_config(
     page_title="KNOVIA",
