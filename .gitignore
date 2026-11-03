@@ -1,0 +1,35 @@
+# Python environments
+venv/
+.venv/
+knovia_env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# AI and vector database storage
+chroma_db/
+chroma.sqlite3/
+
+# Uploaded files
+uploads/
+data/uploads/
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+
+# ChromaDB persistent storage
+knovia_db/
