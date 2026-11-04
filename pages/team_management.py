@@ -164,16 +164,16 @@ for member in members:
     member_id = int(member[0])
 
     member_records[member_id] = {
-        "name": member[5] or member[2],
-        "role": member[3],
-        "skills": member[4] or "",
-        "email": member[6] or "",
-        "workload": (
-            member[7] or "Unknown"
-            if len(member) > 7
-            else "Unknown"
-        )
-    }
+    "name": member[3] or member[2],
+    "role": member[4] or "Team Member",
+    "skills": member[6] or "",
+    "email": member[5] or "",
+    "workload": (
+        member[7] or "Unknown"
+        if len(member) > 7
+        else "Unknown"
+    )
+}
 
 
 # --------------------------------------------------
